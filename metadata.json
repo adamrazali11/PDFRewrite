@@ -1,0 +1,5 @@
+{
+  "name": "PDFRewrite",
+  "description": "A fully client-side PDF editor that allows you to render, edit existing text (via overlay), add new text, and export modified PDFs directly in your browser. Mobile-friendly and privacy-focused.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PDFRewrite Editor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- PDF.js 3.11.174 - Stable version for global window access -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- pdf-lib for editing -->
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    body {
+      overscroll-behavior-y: contain;
+      background-color: #f3f4f6;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .textLayer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      line-height: 1.0;
+      white-space: pre;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .textLayer span {
+      color: transparent;
+      position: absolute;
+      white-space: pre;
+      cursor: text;
+      transform-origin: 0% 0%;
+    }
+    .edit-trigger {
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .edit-trigger:hover {
+      background-color: rgba(79, 70, 229, 0.15) !important;
+      outline: 1px solid rgba(79, 70, 229, 0.4) !important;
+    }
+    
+    /* Highlight mode styles */
+    .textLayer.show-highlights span.edit-trigger {
+      background-color: rgba(79, 70, 229, 0.08);
+      outline: 1px dashed rgba(79, 70, 229, 0.3);
+      border-radius: 2px;
+    }
+
+    /* Scrollbar fixes */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a1a1a1;
+    }
+
+    @keyframes pulse-highlight {
+      0% { background-color: rgba(79, 70, 229, 0.05); }
+      50% { background-color: rgba(79, 70, 229, 0.15); }
+      100% { background-color: rgba(79, 70, 229, 0.05); }
+    }
+    .textLayer.show-highlights span.edit-trigger {
+      animation: pulse-highlight 2s infinite ease-in-out;
+    }
+
+    canvas {
+      display: block;
+      max-width: 100%;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
