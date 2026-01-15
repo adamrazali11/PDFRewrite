@@ -1,20 +1,44 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+<img width="423" height="915" alt="image" src="https://github.com/user-attachments/assets/72891b17-978b-4f94-90fe-0e92e6c3e4b1" />
+<img width="422" height="918" alt="image" src="https://github.com/user-attachments/assets/e55a9997-aec8-4fb1-b71f-2c4c7a5ad99f" />
 
-# Run and deploy your AI Studio app
+PDFRewrite - Client-Side PDF Editor
 
-This contains everything you need to run your app locally.
+A fully client-side PDF editor that runs entirely in the browser.
+Render PDFs, overlay and edit existing text, add new text, and export modified PDFs — no server uploads required.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1Uslr_NCtb20iQ00KbyfNX3KwD-riIGoG
+- Mobile-friendly
+- Privacy-focused
+- No backend dependency
 
-## Run Locally
+ABOUT
 
-**Prerequisites:**  Node.js
+This project is a browser-based PDF editor built with a client-only architecture.
+All PDF rendering and editing happens locally on the user’s device, ensuring speed, privacy, and offline-friendly usage.
 
+Features:
+- PDF rendering in the browser
+- Editing existing text via overlay
+- Adding new text layers
+- Exporting updated PDFs instantly
+
+RUN LOCALLY
+
+Prerequisites:
+- Node.js (LTS recommended)
+
+Setup:
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+npm install
+
+2. Start the development server:
+npm run dev
+
+3. Open in browser:
+http://localhost:3000
+
+NOTES
+
+- This app runs fully on the client side
+- No files are uploaded to any server
+- Suitable for desktop and mobile browsers
